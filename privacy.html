@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="zh-CN">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>隐私说明｜Hermes Personal Calendar</title><meta name="description" content="Hermes Personal Calendar个人日历工具的功能、数据处理和使用说明。"><style>body{margin:0;background:#f4f7fa;color:#243445;font:17px/1.8 -apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif}main,header,footer{max-width:800px;margin:auto;padding:24px}header{padding-bottom:0}a{color:#174f80;text-underline-offset:3px}a:focus-visible{outline:3px solid #9b6008;outline-offset:4px}nav{display:flex;gap:24px;flex-wrap:wrap;border-bottom:1px solid #c9d4df;padding:12px 0}nav [aria-current]{font-weight:700}main{background:#fff;box-sizing:border-box;margin-top:24px;border:1px solid #dce4eb;border-radius:8px;padding:32px}h1{font-size:2rem;line-height:1.3;margin:16px 0 24px;color:#173e61}h2{font-size:1.25rem;margin-top:32px}p,ul,ol,dl{margin:14px 0}li{margin:8px 0}.brand{font-weight:700;text-decoration:none;font-size:1.15rem}.status{background:#fff4d6;border-left:4px solid #98671c;padding:12px 16px;font-size:.94rem}.muted,footer{color:#53667a;font-size:.9rem}code{font-size:.86em;overflow-wrap:anywhere}dt{font-weight:700;margin-top:18px}dd{margin:6px 0 18px}footer{padding-bottom:40px}@media(max-width:600px){body{font-size:16px}main,header,footer{padding:20px}main{margin:20px 12px 0}h1{font-size:1.75rem}nav{gap:20px}}</style></head>
+<body><header><a class="brand" href="./index.html">Hermes Personal Calendar</a><nav aria-label="主要导航"><a href="./index.html">首页</a><a href="./privacy.html" aria-current="page">隐私说明</a><a href="./terms.html">使用条款</a></nav></header>
+<main><aside class="status" role="note"><strong>个人日历工具</strong> · Google 账号访问需本人另行授权。</aside>
+<h1>隐私说明</h1>
+<p>本说明适用于 Hermes Personal Calendar 个人日历工具，描述它怎样访问、使用、保存和传递本人授权的 Google 日历数据。</p>
+<h2>访问哪些数据，为什么访问</h2>
+<dl><dt>日历列表只读</dt><dd><code>https://www.googleapis.com/auth/calendar.calendarlist.readonly</code><br>读取本账号订阅的日历列表，例如名称、日历标识、时区和访问级别，用于识别本人拥有的日历并选择操作目标。此项权限不用于增删列表或改变共享权限。</dd>
+<dt>本人拥有日历中的事件</dt><dd><code>https://www.googleapis.com/auth/calendar.events.owned</code><br>为完成本人查看、创建或修改日程的请求，处理相关事件的标题、开始和结束时间、时区、地点、描述、提醒及重复规则。Google 授予的此项权限包含删除事件；当前机器人接口只开放读取、创建与修改，没有删除日程动作。</dd></dl>
+<p>这些权限用于本人提出的日历请求、重复检查、写后核对和操作回执，不用于广告、画像或与日历工具无关的用途。</p>
+<h2>哪些地方会处理数据</h2>
+<ul><li><strong>本人的 Mac：</strong>加密保存 Google OAuth 凭据，执行固定范围的日历接口。凭据不会作为聊天内容发送给模型，也不复制到 Acer。</li><li><strong>本人的 Acer：</strong>通过受限接口桥取得完成请求所需的日历结果，组织私聊或私有任务，并保存相应会话与操作回执。</li><li><strong>OpenAI：</strong>作为云端模型供应商，处理本次请求所需的相关日历列表信息、所选日历的事件内容及对话材料，以理解请求和生成答复。这一流程包含云端处理；OpenAI 服务自身的数据处理和保存方式还取决于实际使用的账户、设置和适用条款。</li></ul>
+<p>当前日历账户访问仅用于本人的私聊及对应私有任务，不向群会话开放。应用不会把这些账户资料自动发布到团队群、公开群或本网站。</p>
+<h2>保存方式与保留范围</h2>
+<p>日历仍保存在 Google Calendar。授权凭据加密保存在 Mac；本地操作日志、写入回执和会话资料保存在本人的 Mac 或 Acer，可能包含请求内容、日历或事件标识及本次处理的日程字段。</p>
+<p>这些本地资料由本人维护。本工具目前没有统一的自动删除期限，也没有通过机器人自动删除全部历史记录的接口；需要清理时，由本人在相应设备中管理。这里不承诺 Acer 的所有数据库均已加密。</p>
+<h2>训练、广告与统计</h2>
+<p>本应用不将 Google 用户数据用于训练或微调通用 AI 模型，不出售这些数据，不使用第三方广告或分析服务。本说明页没有外部脚本、远程字体、广告或统计组件；日历内容不会写入这些静态页面。</p>
+<h2>撤销授权与清理</h2>
+<p>本人可以在 <a href="https://myaccount.google.com/connections" rel="noreferrer">Google 账号的第三方连接页面</a>撤销 Hermes Personal Calendar 的访问权限。撤销后，应用不能继续凭该授权读取或修改日历。</p>
+<p>撤销 Google 授权不会自动删除 Google 中已创建的事件、本地日志、回执、既有会话或已经发送给模型服务的内容。Google 中的事件可由本人在 Google Calendar 中管理；本地历史记录由本人管理相应设备；云端服务的数据管理遵循其实际账户设置与适用规则。</p>
+<h2>说明更新</h2>
+<p>如果使用目的、权限或数据流发生变化，应先更新本说明，并在需要时重新取得授权。应用的使用范围见<a href="./terms.html">使用条款</a>。</p>
+</main><footer>更新：2026年11月2日 · 个人日历工具说明</footer></body></html>
