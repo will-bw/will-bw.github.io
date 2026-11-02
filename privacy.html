@@ -9,6 +9,11 @@
 <dl><dt>日历列表只读</dt><dd><code>https://www.googleapis.com/auth/calendar.calendarlist.readonly</code><br>读取本账号订阅的日历列表，例如名称、日历标识、时区和访问级别，用于识别本人拥有的日历并选择操作目标。此项权限不用于增删列表或改变共享权限。</dd>
 <dt>本人拥有日历中的事件</dt><dd><code>https://www.googleapis.com/auth/calendar.events.owned</code><br>为完成本人查看、创建或修改日程的请求，处理相关事件的标题、开始和结束时间、时区、地点、描述、提醒及重复规则。Google 授予的此项权限包含删除事件；当前机器人接口只开放读取、创建与修改，没有删除日程动作。</dd></dl>
 <p>这些权限用于本人提出的日历请求、重复检查、写后核对和操作回执，不用于广告、画像或与日历工具无关的用途。</p>
+<h2>Google 登录的基础身份权限</h2>
+<p>除上述两项 Calendar 权限外，gws 登录流程还申请三项基础身份权限，实际共五项：</p>
+<ul><li><code>openid</code>：识别本次 Google 登录账号。</li><li><code>https://www.googleapis.com/auth/userinfo.email</code>：读取账号邮箱，用于本机账号识别与关联。</li><li><code>https://www.googleapis.com/auth/userinfo.profile</code>：允许读取姓名、头像等基本个人资料，供 gws 的账号身份流程使用。</li></ul>
+<p>该身份流程由 Mac 上的 gws 处理并保存账号关联。用于登录识别的基础身份信息不作为聊天凭据，也不由该流程交给 Acer 或 OpenAI 模型。这些身份权限不包含 Gmail 邮件或 Drive 文件访问。</p>
+<p>这与日历数据中出现的邮箱不同：日历标识、日历列表或事件内容本身如含邮箱，仍可能作为完成请求所需的日历材料，按下文的数据流在私聊或私有任务中交给模型处理。</p>
 <h2>哪些地方会处理数据</h2>
 <ul><li><strong>本人的 Mac：</strong>加密保存 Google OAuth 凭据，执行固定范围的日历接口。凭据不会作为聊天内容发送给模型，也不复制到 Acer。</li><li><strong>本人的 Acer：</strong>通过受限接口桥取得完成请求所需的日历结果，组织私聊或私有任务，并保存相应会话与操作回执。</li><li><strong>OpenAI：</strong>作为云端模型供应商，处理本次请求所需的相关日历列表信息、所选日历的事件内容及对话材料，以理解请求和生成答复。这一流程包含云端处理；OpenAI 服务自身的数据处理和保存方式还取决于实际使用的账户、设置和适用条款。</li></ul>
 <p>当前日历账户访问仅用于本人的私聊及对应私有任务，不向群会话开放。应用不会把这些账户资料自动发布到团队群、公开群或本网站。</p>
